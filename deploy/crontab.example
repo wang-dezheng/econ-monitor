@@ -1,0 +1,6 @@
+# 境外服务器 cron 示例（北京时间）
+# 1) 宿主机 Python 直接跑
+30 8 * * * cd /opt/econ && /usr/bin/python3 run.py >> logs/cron.log 2>&1
+
+# 2) Docker 方式（推荐）
+30 8 * * * cd /opt/econ && /usr/bin/docker compose -f deploy/docker-compose.yml run --rm econ >> logs/cron.log 2>&1

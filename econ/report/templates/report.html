@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ title }} · {{ date }}</title>
+<style>
+  :root {
+    --bg: #f4f6f9;
+    --card: #ffffff;
+    --ink: #15202b;
+    --text: #334155;
+    --muted: #7b8794;
+    --line: #e8ecf1;
+    --soft: #f6f8fb;
+    --red: #b83227;
+    --red-bg: #fdf0ee;
+    --green: #1e8449;
+    --green-bg: #edf7f1;
+    --amber: #b45309;
+    --blue: #2b6cb0;
+    --navy: #182635;
+    --shadow: 0 1px 2px rgba(15, 23, 42, .04), 0 8px 24px rgba(15, 23, 42, .035);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1100px 400px at 10% -10%, #eaf0f7 0%, rgba(234, 240, 247, 0) 60%),
+      var(--bg);
+    color: var(--ink);
+    font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", "Noto Sans CJK SC", system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: var(--red); }
+  .page { max-width: 1280px; margin: 0 auto; padding: 28px 22px 52px; }
+
+  .topbar { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 18px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .logo {
+    width: 44px; height: 44px; border-radius: 12px; background: var(--navy); color: #fff;
+    display: grid; place-items: center; font-size: 21px; font-weight: 700; letter-spacing: 0;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
+  }
+  .brand h1 { margin: 0; font-size: 20px; letter-spacing: .5px; }
+  .brand p { margin: 2px 0 0; font-size: 11px; color: var(--muted); letter-spacing: .6px; text-transform: uppercase; }
+  .topmeta { text-align: right; font-size: 12px; color: var(--muted); line-height: 1.8; }
+  .topmeta strong { color: var(--text); font-weight: 600; }
+  .print-btn {
+    border: 1px solid var(--line); background: #fff; color: var(--text); border-radius: 9px;
+    padding: 6px 12px; font-size: 12px; cursor: pointer; margin-left: 10px;
+  }
+  .print-btn:hover { border-color: #cbd5e1; background: var(--soft); }
+
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); padding: 20px; }
+  section { margin-bottom: 16px; }
+
+  .hero { display: grid; grid-template-columns: 285px 1fr; gap: 26px; align-items: center; padding: 24px 28px; }
+  .hero-left { display: flex; justify-content: center; align-items: center; border-right: 1px solid var(--line); padding-right: 18px; }
+  .hero-left svg { width: 100%; max-width: 280px; height: auto; }
+  .chips { display: flex; flex-wrap: wrap; gap: 7px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 999px;
+    background: var(--soft); border: 1px solid var(--line); color: #475569; font-size: 11.5px;
+  }
+  .chip b { color: var(--ink); font-weight: 600; }
+  .hero h2 { margin: 13px 0 8px; font-size: 26px; line-height: 1.35; letter-spacing: .2px; }
+  .summary { margin: 0; color: var(--text); font-size: 14px; line-height: 1.9; }
+  .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 18px; }
+  .hero-stats div { background: var(--soft); border: 1px solid var(--line); border-radius: 10px; padding: 9px 11px; }
+  .hero-stats span { display: block; font-size: 10.5px; color: var(--muted); }
+  .hero-stats strong { display: block; font-size: 18px; font-weight: 700; margin-top: 1px; }
+  .source-note { margin-top: 9px; font-size: 10.5px; color: var(--muted); }
+
+  .pillar-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .insight-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .insight-card { padding: 15px 18px; }
+  .insight-card ul { margin: 5px 0 0; padding-left: 17px; font-size: 11.5px; line-height: 1.8; color: var(--text); }
+  .insight-card li { margin-bottom: 2px; }
+  .insight-card li::marker { color: #94a3b8; }
+  .pillar { padding: 15px 16px; }
+  .pillar-head { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text); }
+  .pillar-head .icon { color: var(--muted); font-size: 13px; }
+  .pillar-head .weight { margin-left: auto; color: var(--muted); font-size: 10.5px; }
+  .pillar-score { font-size: 31px; font-weight: 700; line-height: 1.25; margin-top: 6px; letter-spacing: -.5px; }
+  .bar { height: 6px; border-radius: 999px; background: #eef2f6; overflow: hidden; margin: 7px 0 6px; }
+  .bar > div { height: 100%; border-radius: 999px; }
+  .pillar-delta { font-size: 11px; color: var(--muted); min-height: 17px; }
+  .pillar-drivers { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 7px; }
+  .mini { font-size: 10px; padding: 1px 6px; border-radius: 5px; white-space: nowrap; }
+  .mini.pos { background: var(--red-bg); color: var(--red); }
+  .mini.neg { background: var(--green-bg); color: var(--green); }
+
+  .grid-2 { display: grid; grid-template-columns: 1.65fr 1fr; gap: 16px; }
+  .section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+  .section-head h3 { margin: 0; font-size: 15px; letter-spacing: .2px; }
+  .section-head span { color: var(--muted); font-size: 10.5px; }
+  .chart-card svg { width: 100%; height: auto; display: block; }
+  .radar-card svg { max-height: 330px; margin: 0 auto; }
+
+  .ind-group { margin-top: 14px; }
+  .group-title { font-size: 12px; color: var(--text); font-weight: 600; padding: 6px 0 2px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; }
+  .group-title span { color: var(--muted); font-weight: 400; }
+  .ind-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .ind-table th { text-align: left; font-weight: 400; color: var(--muted); font-size: 10.5px; padding: 6px 6px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  .ind-table td { padding: 9px 6px; border-bottom: 1px solid #f2f5f8; vertical-align: middle; }
+  .ind-table tr:last-child td { border-bottom: none; }
+  .ind-name { display: block; color: var(--ink); }
+  .ind-note { display: block; font-size: 10px; color: var(--muted); margin-top: 1px; max-width: 330px; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .muted { color: var(--muted); }
+  .score-pill { display: inline-block; min-width: 38px; text-align: center; padding: 2px 6px; border-radius: 6px; background: var(--soft); font-weight: 600; }
+  .score-pill.high { background: var(--red-bg); color: var(--red); }
+  .score-pill.low { background: var(--green-bg); color: var(--green); }
+  .signal { font-size: 10.5px; padding: 2px 7px; border-radius: 999px; background: var(--soft); color: var(--muted); white-space: nowrap; }
+  .signal.high { background: var(--red-bg); color: var(--red); }
+  .signal.low { background: var(--green-bg); color: var(--green); }
+  .status { font-size: 9.5px; color: #b45309; margin-left: 4px; }
+  .delta-up { color: var(--red); }
+  .delta-down { color: var(--green); }
+  tr.stale td, tr.expired td { opacity: .62; }
+  tr.missing td { opacity: .45; }
+
+  .news-grid { align-items: start; }
+  .news-list { margin-top: 4px; }
+  .news-item { padding: 11px 0; border-bottom: 1px solid #f1f4f8; }
+  .news-item:last-child { border-bottom: none; }
+  .news-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; font-size: 10.5px; color: var(--muted); margin-bottom: 3px; }
+  .news-meta time { font-variant-numeric: tabular-nums; }
+  .cat { margin-left: auto; }
+  .tag { font-size: 10px; padding: 1px 7px; border-radius: 5px; font-weight: 600; }
+  .tag.positive { background: var(--red-bg); color: var(--red); }
+  .tag.negative { background: var(--green-bg); color: var(--green); }
+  .tag.neutral { background: var(--soft); color: var(--muted); }
+  .news-item > a { display: block; font-size: 13px; line-height: 1.55; color: var(--ink); }
+  .news-item > a:hover { color: var(--red); }
+  .why { margin-top: 4px; font-size: 10px; color: var(--muted); }
+  .why span { display: inline-block; margin-right: 4px; padding: 0 5px; border-radius: 4px; background: var(--soft); border: 1px solid var(--line); }
+  .side-stack { display: grid; gap: 16px; }
+  .two-lists { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .two-lists h4 { margin: 0 0 6px; font-size: 12px; }
+  .two-lists h4.pos { color: var(--red); }
+  .two-lists h4.neg { color: var(--green); }
+  .two-lists a { display: block; font-size: 11.5px; line-height: 1.5; padding: 6px 0; border-bottom: 1px dashed #eef2f6; color: var(--text); }
+  .policy-item { display: flex; align-items: flex-start; gap: 7px; padding: 7px 0; border-bottom: 1px dashed #eef2f6; font-size: 11.5px; }
+  .policy-item:last-child { border-bottom: none; }
+  .policy-item .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--amber); margin-top: 6px; flex: 0 0 auto; }
+  .policy-item a { flex: 1; color: var(--text); }
+  .policy-item .src { color: var(--muted); font-size: 10px; white-space: nowrap; }
+
+  .market-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .market-table th { text-align: right; font-weight: 400; color: var(--muted); font-size: 10.5px; padding: 6px; border-bottom: 1px solid var(--line); }
+  .market-table th:first-child, .market-table td:first-child { text-align: left; }
+  .market-table td { padding: 8px 6px; text-align: right; border-bottom: 1px solid #f2f5f8; font-variant-numeric: tabular-nums; }
+  .market-table tr:last-child td { border-bottom: none; }
+  .up { color: var(--red); }
+  .down { color: var(--green); }
+  .flat { color: var(--muted); }
+
+  .source-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .src-chip { font-size: 10.5px; padding: 3px 8px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); background: #fff; }
+  .src-chip.ok { color: #166534; border-color: #d8ecdf; background: #f7fcf8; }
+  .src-chip.fail { color: #9a3412; border-color: #f3ddd3; background: #fff9f6; }
+  .quality-note { margin-top: 10px; font-size: 11px; color: var(--muted); line-height: 1.8; }
+  .quality-note b { color: var(--text); font-weight: 600; }
+
+  .method summary { cursor: pointer; font-size: 13px; font-weight: 600; color: var(--text); }
+  .method-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px; font-size: 11.5px; color: var(--text); line-height: 1.85; }
+  .method-grid h4 { margin: 0 0 4px; font-size: 12px; }
+  .method-grid p { margin: 0 0 8px; }
+  .method code { background: var(--soft); border: 1px solid var(--line); padding: 0 4px; border-radius: 4px; font-size: 10.5px; }
+
+  footer { margin-top: 22px; color: var(--muted); font-size: 10.5px; line-height: 1.9; text-align: center; }
+  .empty { color: var(--muted); font-size: 12px; padding: 20px; text-align: center; }
+
+  @media (max-width: 1040px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { border-right: none; border-bottom: 1px solid var(--line); padding: 0 0 12px; }
+    .pillar-grid { grid-template-columns: repeat(2, 1fr); }
+    .insight-grid { grid-template-columns: 1fr; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .radar-card svg { max-height: 300px; }
+  }
+  @media (max-width: 640px) {
+    .page { padding: 14px 12px 36px; }
+    .topbar { align-items: flex-start; flex-direction: column; }
+    .topmeta { text-align: left; }
+    .hero { padding: 18px; }
+    .hero h2 { font-size: 21px; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+    .pillar-grid { grid-template-columns: 1fr; }
+    .ind-note { display: none; }
+    .ind-table { font-size: 11px; }
+    .ind-table th:nth-child(3), .ind-table td:nth-child(3) { display: none; }
+    .two-lists { grid-template-columns: 1fr; }
+    .method-grid { grid-template-columns: 1fr; }
+  }
+  @media print {
+    body { background: #fff; }
+    .page { max-width: none; padding: 0; }
+    .card { box-shadow: none; break-inside: avoid; }
+    .print-btn { display: none; }
+    .grid-2 { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">经</div>
+      <div>
+        <h1>{{ title }}</h1>
+        <p>China Macro Pulse · 数据驱动的经济温度计</p>
+      </div>
+    </div>
+    <div class="topmeta">
+      <div><strong>{{ date_cn }}</strong> · 生成于 {{ generated_at }}</div>
+      <div>数据截至 {{ data_cutoff }}<button class="print-btn" onclick="window.print()">打印 / 存为 PDF</button></div>
+    </div>
+  </header>
+
+  <section class="hero card">
+    <div class="hero-left">{{ gauge_svg|safe }}</div>
+    <div class="hero-right">
+      <div class="chips">
+        <span class="chip">周期 <b>{{ regime }}</b></span>
+        <span class="chip">方向 <b>{{ direction }}</b></span>
+        <span class="chip">新闻面 <b>{{ news_state }}</b></span>
+        <span class="chip">政策 <b>{{ policy_label }}</b></span>
+      </div>
+      <h2>{{ verdict }}</h2>
+      <p class="summary">{{ summary }}</p>
+      <div class="hero-stats">
+        <div><span>数据覆盖</span><strong>{{ coverage_pct }}</strong></div>
+        <div><span>改善面</span><strong>{{ improving_pct }}</strong></div>
+        <div><span>新闻情绪</span><strong>{{ news_score }}</strong></div>
+        <div><span>政策信号</span><strong>{{ policy_score }}</strong></div>
+      </div>
+      <div class="source-note">{{ narrative_source }} · 温度 0-100，50 为中性；分数越高越偏扩张/偏热。</div>
+    </div>
+  </section>
+
+  <section class="insight-grid">
+    <div class="card insight-card">
+      <div class="section-head"><h3>主要支撑</h3><span>对总分的正贡献</span></div>
+      <ul>{% for x in drivers %}<li>{{ x }}</li>{% else %}<li class="muted">暂无</li>{% endfor %}</ul>
+    </div>
+    <div class="card insight-card">
+      <div class="section-head"><h3>主要风险</h3><span>对总分的负贡献</span></div>
+      <ul>{% for x in risks %}<li>{{ x }}</li>{% else %}<li class="muted">暂无</li>{% endfor %}</ul>
+    </div>
+    <div class="card insight-card">
+      <div class="section-head"><h3>未来关注</h3><span>1-2 周</span></div>
+      <ul>{% for x in watch %}<li>{{ x }}</li>{% else %}<li class="muted">暂无</li>{% endfor %}</ul>
+    </div>
+  </section>
+
+  <section class="pillar-grid">
+    {% for p in pillars %}
+    <div class="pillar card">
+      <div class="pillar-head"><span class="icon">{{ p.icon }}</span><span>{{ p.name }}</span><span class="weight">{{ p.weight_pct }}%</span></div>
+      <div class="pillar-score" style="color: {{ p.color }}">{{ p.score_text }}</div>
+      <div class="bar"><div style="width: {{ p.width }}%; background: {{ p.color }}"></div></div>
+      <div class="pillar-delta">{{ p.delta_text }}</div>
+      <div class="pillar-drivers">
+        {% for d in p.top_pos %}<span class="mini pos">+{{ d.name }}</span>{% endfor %}
+        {% for d in p.top_neg %}<span class="mini neg">-{{ d.name }}</span>{% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </section>
+
+  <section class="grid-2">
+    <div class="card chart-card">
+      <div class="section-head"><h3>经济温度走势</h3><span>近 36 个月 · 虚线为 3 月均线 · 灰色带为中性区</span></div>
+      {{ trend_svg|safe }}
+    </div>
+    <div class="card chart-card radar-card">
+      <div class="section-head"><h3>五维结构</h3><span>0-100 · 越靠外越强</span></div>
+      {{ radar_svg|safe }}
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="section-head"><h3>关键指标</h3><span>评分 0-100 · 红为偏强、绿为偏弱 · “滞后/过期”不计入总分</span></div>
+    {% for group in indicator_groups %}
+    <div class="ind-group">
+      <div class="group-title">{{ group.name }} <span>{{ group.score_text }} · 权重 {{ group.weight_pct }}%</span></div>
+      <table class="ind-table">
+        <thead>
+          <tr><th>指标</th><th>最新</th><th>上期</th><th>评分</th><th>3月变化</th><th>信号</th><th>数据期</th></tr>
+        </thead>
+        <tbody>
+          {% for r in group.rows %}
+          <tr class="{{ r.status }}">
+            <td><span class="ind-name">{{ r.name }}</span><span class="ind-note">{{ r.note }}</span></td>
+            <td class="num">{{ r.value_text }}</td>
+            <td class="num muted">{{ r.prior_text }}</td>
+            <td class="num"><span class="score-pill {{ r.score_class }}">{{ r.score_text }}</span></td>
+            <td class="num {{ r.delta_class }}">{{ r.delta_text }}</td>
+            <td><span class="signal {{ r.signal_class }}">{{ r.signal }}</span></td>
+            <td class="muted">{{ r.period }}<span class="status">{{ r.status_label }}</span></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    {% endfor %}
+  </section>
+
+  <section class="grid-2 news-grid">
+    <div class="card">
+      <div class="section-head"><h3>今日要闻</h3><span>已按宏观相关性与影响力排序 · 共 {{ news_total }} 条入库</span></div>
+      <div class="news-list">
+        {% for n in news_top %}
+        <article class="news-item">
+          <div class="news-meta">
+            <span class="tag {{ n.label_class }}">{{ n.label }}</span>
+            <span>{{ n.source }}</span>
+            <time>{{ n.time_text }}</time>
+            <span class="cat">{{ n.categories|join(' / ') }}</span>
+          </div>
+          <a href="{{ n.url }}" target="_blank" rel="noopener">{{ n.title }}</a>
+          {% if n.keywords %}<div class="why">命中：{% for k in n.keywords %}<span>{{ k.word }}</span>{% endfor %}</div>{% endif %}
+        </article>
+        {% endfor %}
+        {% if not news_top %}<div class="empty">今日没有抓到符合宏观相关性的新闻。</div>{% endif %}
+      </div>
+    </div>
+
+    <div class="side-stack">
+      <div class="card">
+        <div class="section-head"><h3>利好 / 利空</h3><span>按情绪强度 × 影响力</span></div>
+        <div class="two-lists">
+          <div>
+            <h4 class="pos">利好</h4>
+            {% for n in news_positive[:5] %}<a href="{{ n.url }}" target="_blank" rel="noopener">{{ n.title }}</a>{% endfor %}
+            {% if not news_positive %}<div class="empty">暂无</div>{% endif %}
+          </div>
+          <div>
+            <h4 class="neg">利空</h4>
+            {% for n in news_negative[:5] %}<a href="{{ n.url }}" target="_blank" rel="noopener">{{ n.title }}</a>{% endfor %}
+            {% if not news_negative %}<div class="empty">暂无</div>{% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="section-head"><h3>政策信号</h3><span>{{ policy_label }} · {{ policy_score }}</span></div>
+        {% for n in news_policy[:5] %}
+        <div class="policy-item">
+          <span class="dot"></span>
+          <a href="{{ n.url }}" target="_blank" rel="noopener">{{ n.title }}</a>
+          <span class="src">{{ n.source }}</span>
+        </div>
+        {% endfor %}
+        {% if not news_policy %}<div class="empty">今日没有识别到明确的政策信号。</div>{% endif %}
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="section-head"><h3>关键序列</h3><span>近 36 个月 · 红线/绿线仅表示相对参考线位置</span></div>
+    {{ sparklines_svg|safe }}
+  </section>
+
+  <section class="grid-2">
+    <div class="card">
+      <div class="section-head"><h3>市场快照</h3><span>按中国习惯：红涨绿跌 · 1月≈21个交易日，3月≈63个</span></div>
+      <table class="market-table">
+        <thead><tr><th>品种</th><th>最新</th><th>1日</th><th>1月</th><th>3月</th><th>日期</th></tr></thead>
+        <tbody>
+          {% for m in market %}
+          <tr>
+            <td>{{ m.name }}</td>
+            <td>{{ m.price_text }}</td>
+            <td class="{{ m.cls_1d }}">{{ m.chg_1d_text }}</td>
+            <td class="{{ m.cls_1m }}">{{ m.chg_1m_text }}</td>
+            <td class="{{ m.cls_3m }}">{{ m.chg_3m_text }}</td>
+            <td class="muted">{{ m.date }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% if not market %}<div class="empty">行情源暂不可用。</div>{% endif %}
+    </div>
+
+    <div class="card">
+      <div class="section-head"><h3>数据健康度</h3><span>权重覆盖 {{ coverage_pct }} · 新闻源 {{ source_ok }}/{{ source_total }} 可用</span></div>
+      <div class="source-chips">
+        {% for s in sources %}
+        <span class="src-chip {{ s.cls }}" title="{{ s.error }}">{{ s.name }}{% if s.count %} · {{ s.count }}{% endif %}</span>
+        {% endfor %}
+      </div>
+      <div class="quality-note">
+        <b>缺失指标：</b>{{ missing_text }}<br>
+        <b>滞后/过期：</b>{{ stale_text }}<br>
+        <b>说明：</b>境外源显示为失败，通常表示当前网络未连接；开启 VPN 或部署在境外后会自动启用。
+      </div>
+    </div>
+  </section>
+
+  <details class="card method">
+    <summary>口径与方法说明（点开）</summary>
+    <div class="method-grid">
+      <div>
+        <h4>五个维度</h4>
+        <p>{{ methodology_weights }}</p>
+        <h4>指标打分</h4>
+        <p>增速类指标用最近 5 年的稳健 z 分数（中位数 / MAD）映射到 0-100，避免结构性下台阶被误判为永久衰退；PMI、CPI、房价等有合理区间的指标用分段锚点。单项分数 50 为中性。</p>
+        <h4>合成与方向</h4>
+        <p>维度内按指标权重加权，维度间按上表权重加权。3 个月变化用于判断方向；改善面 = 3 个月评分上升的指标占比。</p>
+      </div>
+      <div>
+        <h4>新闻情绪</h4>
+        <p>不是让大模型“凭感觉”判断，而是用宏观相关词过滤 + 情绪短语词典 + 否定词/程度副词 + 数字幅度做可解释打分。每条新闻都展示命中的词，便于复核。新闻分只作为“预期面”，不混入硬数据温度。</p>
+        <h4>数据滞后处理</h4>
+        <p>月度数据超过 75 天视为滞后（权重 ×0.6），超过 120 天视为过期（不计入总分）；季度数据阈值分别为 150 / 240 天。表格中会标注。</p>
+        <h4>边界</h4>
+        <p>这是“当前状态的温度计”，不是预测模型。它适合每天用 2 分钟判断经济在变好还是变差、主要矛盾在哪；不构成投资建议。</p>
+      </div>
+    </div>
+  </details>
+
+  <footer>
+    数据来源：国家统计局、中国人民银行、海关总署、财政部、国家发改委、东方财富、新浪财经、华尔街见闻，以及可选的境外公开 RSS。<br>
+    本报告由程序自动生成，仅用于个人研究，不构成投资建议。生成时间 {{ generated_at }}，报告编号 {{ run_id }}。
+  </footer>
+</div>
+</body>
+</html>

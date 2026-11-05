@@ -1,0 +1,18 @@
+services:
+  econ:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    image: econ-monitor:latest
+    container_name: econ-monitor
+    environment:
+      TZ: Asia/Shanghai
+      ECON_LLM_API_KEY: ${ECON_LLM_API_KEY:-}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ../data:/app/data
+      - ../reports:/app/reports
+      - ../logs:/app/logs
+      - ../config.yaml:/app/config.yaml:ro
+    command: ["python", "run.py"]
