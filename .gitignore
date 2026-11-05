@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.log
+.env
+config.local.yaml
+data/cache/
+data/econ.db
+data/latest.json
+reports/*.html
+reports/*.md
+logs/
+_*.py
+_*.png
+_*.json
+_run*.log
