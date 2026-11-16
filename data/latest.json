@@ -1,17 +1,17 @@
 {
-  "run_id": "20261115-145313",
-  "generated_at": "2026-11-15T14:53:13.690804+08:00",
-  "report_date": "2026-11-15",
-  "composite": 35.4,
+  "run_id": "20261116-145314",
+  "generated_at": "2026-11-16T14:53:14.554373+08:00",
+  "report_date": "2026-11-16",
+  "composite": 35.5,
   "temperature": "偏冷",
   "regime": "偏冷 / 通缩压力",
-  "delta_3m": -1.2,
-  "coverage": 0.64,
-  "improving_share": 0.46,
+  "delta_3m": -1.4,
+  "coverage": 0.68,
+  "improving_share": 0.36,
   "pillars": {
     "growth": {
-      "score": 42.557455408791775,
-      "delta_3m": 0.5693928575564078,
+      "score": 41.723188004045944,
+      "delta_3m": 0.22758285216767937,
       "weight": 0.34,
       "coverage": 0.52
     },
@@ -28,46 +28,46 @@
       "coverage": 0.2
     },
     "housing": {
-      "score": 39.70178571428566,
-      "delta_3m": -2.4852857142855385,
+      "score": 37.50428571428573,
+      "delta_3m": -1.467642857142953,
       "weight": 0.14,
       "coverage": 1.0
     },
     "external": {
-      "score": 40.9997347267786,
-      "delta_3m": -3.863498400529713,
+      "score": 44.94415527354215,
+      "delta_3m": -3.442463880997675,
       "weight": 0.18,
-      "coverage": 0.48
+      "coverage": 0.7
     }
   },
   "news": {
-    "score": 33.2,
-    "policy_score": 19.5,
-    "policy_label": "偏收紧",
+    "score": 38.0,
+    "policy_score": 48.0,
+    "policy_label": "中性",
     "counts": {
-      "total": 36,
-      "positive": 2,
-      "negative": 7,
-      "neutral": 27,
-      "domestic": 30,
-      "overseas": 6,
-      "official": 22
+      "total": 127,
+      "positive": 14,
+      "negative": 34,
+      "neutral": 79,
+      "domestic": 36,
+      "overseas": 91,
+      "official": 23
     }
   },
   "narrative": {
     "verdict": "数据与情绪共振向下，短期以防御为主；地产链仍是拖累",
-    "summary": "经济温度 35.4，处于「偏冷」区间，较 3 个月前小幅走弱（-1.2 分）。结构上，偏冷 / 通缩压力格局：PPI 同比（5.7%）、一线二手房环比（均值）（0.2%）、原油 3 个月涨跌（-1.5%）是主要支撑，新增人民币贷款同比（-3,696.1%）、美国 CPI 同比（3.7%）、CPI 同比（0.7%）是主要拖累。最新 CPI 0.7%、制造业 PMI 49.3，社零 1.1%、固投 —、出口 —。新闻面偏悲观（33 分），政策信号偏收紧。",
+    "summary": "经济温度 35.5，处于「偏冷」区间，较 3 个月前小幅走弱（-1.4 分）。结构上，偏冷 / 通缩压力格局：PPI 同比（5.7%）、一线二手房环比（均值）（0.2%）、美元兑离岸人民币 3 个月变化（-0.7%）是主要支撑，新增人民币贷款同比（-3,696.1%）、CPI 同比（0.7%）、70 城新房环比上涨城市占比（20%）是主要拖累。最新 CPI 0.7%、制造业 PMI 49.3，社零 0.4%、固投 —、出口 —。新闻面偏悲观（38 分），政策信号中性。",
     "drivers": [
       "PPI 同比：5.7%，评分 69",
-      "一线二手房环比（均值）：0.2%，评分 59",
-      "原油 3 个月涨跌：-1.5%，评分 53"
+      "一线二手房环比（均值）：0.2%，评分 58",
+      "美元兑离岸人民币 3 个月变化：-0.7%，评分 54"
     ],
     "risks": [
       "新增人民币贷款同比：-3,696.1%，评分 5",
-      "美国 CPI 同比：3.7%，评分 31",
       "CPI 同比：0.7%，评分 34",
+      "70 城新房环比上涨城市占比：20%，评分 30",
       "新闻情绪偏弱，注意预期自我强化",
-      "数据覆盖率仅 64%，结论置信度受影响"
+      "数据覆盖率仅 68%，结论置信度受影响"
     ],
     "watch": [
       "11月 CPI / PPI",
@@ -90,7 +90,7 @@
       "score": 44.4,
       "score_delta_3m": 0.8,
       "period": "2026-10-31",
-      "age_days": 15,
+      "age_days": 16,
       "status": "ok",
       "weight": 0.18,
       "source": "国家统计局",
@@ -121,17 +121,17 @@
       "pillar": "growth",
       "unit": "%",
       "decimals": 1,
-      "value": 1.1,
-      "prior": 0.4,
-      "score": 42.3,
-      "score_delta_3m": 0.4,
-      "period": "2026-09-30",
-      "age_days": 46,
+      "value": 0.4,
+      "prior": 1.1,
+      "score": 39.6,
+      "score_delta_3m": -0.7,
+      "period": "2026-10-31",
+      "age_days": 16,
       "status": "ok",
       "weight": 0.16,
       "source": "国家统计局",
       "note": "消费端高频指标。",
-      "signal": "中性"
+      "signal": "偏弱"
     },
     {
       "key": "fai_yoy",
@@ -180,7 +180,7 @@
       "score": 35.6,
       "score_delta_3m": -3.6,
       "period": "2026-09-30",
-      "age_days": 46,
+      "age_days": 47,
       "status": "ok",
       "weight": 0.1,
       "source": "国家统计局",
@@ -198,7 +198,7 @@
       "score": 47.6,
       "score_delta_3m": 5.6,
       "period": "2026-10-31",
-      "age_days": 15,
+      "age_days": 16,
       "status": "ok",
       "weight": 0.08,
       "source": "国家统计局",
@@ -234,7 +234,7 @@
       "score": 33.6,
       "score_delta_3m": 5.6,
       "period": "2026-10-31",
-      "age_days": 15,
+      "age_days": 16,
       "status": "ok",
       "weight": 0.55,
       "source": "国家统计局",
@@ -252,7 +252,7 @@
       "score": 69.2,
       "score_delta_3m": -2.1,
       "period": "2026-10-31",
-      "age_days": 15,
+      "age_days": 16,
       "status": "ok",
       "weight": 0.45,
       "source": "国家统计局",
@@ -324,7 +324,7 @@
       "score": 5.0,
       "score_delta_3m": -6.4,
       "period": "2026-10-31",
-      "age_days": 15,
+      "age_days": 16,
       "status": "ok",
       "weight": 0.2,
       "source": "中国人民银行",
@@ -355,12 +355,12 @@
       "pillar": "housing",
       "unit": "%",
       "decimals": 0,
-      "value": 24.285714285714285,
-      "prior": 21.428571428571427,
-      "score": 36.4,
+      "value": 20.0,
+      "prior": 24.285714285714285,
+      "score": 30.0,
       "score_delta_3m": -6.4,
-      "period": "2026-09-30",
-      "age_days": 46,
+      "period": "2026-10-31",
+      "age_days": 16,
       "status": "ok",
       "weight": 0.4,
       "source": "国家统计局 / 东方财富",
@@ -373,12 +373,12 @@
       "pillar": "housing",
       "unit": "%",
       "decimals": 1,
-      "value": -3.0357142857142776,
-      "prior": -3.2914285714285825,
-      "score": 24.8,
-      "score_delta_3m": 3.3,
-      "period": "2026-09-30",
-      "age_days": 46,
+      "value": -2.73142857142858,
+      "prior": -3.0357142857142776,
+      "score": 27.0,
+      "score_delta_3m": 4.7,
+      "period": "2026-10-31",
+      "age_days": 16,
       "status": "ok",
       "weight": 0.3,
       "source": "国家统计局 / 东方财富",
@@ -391,12 +391,12 @@
       "pillar": "housing",
       "unit": "%",
       "decimals": 1,
-      "value": 0.22499999999999432,
-      "prior": 0.07500000000000284,
-      "score": 59.0,
-      "score_delta_3m": -3.0,
-      "period": "2026-09-30",
-      "age_days": 46,
+      "value": 0.20000000000000284,
+      "prior": 0.22499999999999432,
+      "score": 58.0,
+      "score_delta_3m": -1.0,
+      "period": "2026-10-31",
+      "age_days": 16,
       "status": "ok",
       "weight": 0.3,
       "source": "国家统计局 / 东方财富",
@@ -409,17 +409,17 @@
       "pillar": "external",
       "unit": "%",
       "decimals": 1,
-      "value": null,
-      "prior": null,
-      "score": null,
-      "score_delta_3m": null,
-      "period": "",
-      "age_days": null,
-      "status": "missing",
+      "value": -0.7100327478416157,
+      "prior": -1.4763808677624835,
+      "score": 53.6,
+      "score_delta_3m": -2.5,
+      "period": "2026-11-16",
+      "age_days": 0,
+      "status": "ok",
       "weight": 0.22,
       "source": "东方财富",
       "note": "数值为正表示人民币贬值，通常对应资本流出与风险偏好下降。",
-      "signal": "—"
+      "signal": "中性"
     },
     {
       "key": "us_curve",
@@ -450,7 +450,7 @@
       "score": 31.0,
       "score_delta_3m": -4.0,
       "period": "2026-09-30",
-      "age_days": 46,
+      "age_days": 47,
       "status": "ok",
       "weight": 0.18,
       "source": "美国劳工部",
@@ -468,7 +468,7 @@
       "score": 40.5,
       "score_delta_3m": -23.6,
       "period": "2026-11-13",
-      "age_days": 2,
+      "age_days": 3,
       "status": "ok",
       "weight": 0.15,
       "source": "上海期货交易所",
@@ -486,7 +486,7 @@
       "score": 53.5,
       "score_delta_3m": 16.1,
       "period": "2026-11-13",
-      "age_days": 2,
+      "age_days": 3,
       "status": "ok",
       "weight": 0.15,
       "source": "上海国际能源交易中心",
@@ -513,6 +513,66 @@
     }
   ],
   "market": [
+    {
+      "key": "sse",
+      "name": "上证指数",
+      "date": "2026-11-16",
+      "price": 3600.04,
+      "chg_1d": -0.944047766450673,
+      "chg_1m": -3.127859041837544,
+      "chg_3m": -8.491163140650071,
+      "decimals": 2
+    },
+    {
+      "key": "szse",
+      "name": "深证成指",
+      "date": "2026-11-16",
+      "price": 10685.3,
+      "chg_1d": -2.584514791513026,
+      "chg_1m": -9.465484314287021,
+      "chg_3m": -25.065079694574266,
+      "decimals": 2
+    },
+    {
+      "key": "cyb",
+      "name": "创业板指",
+      "date": "2026-11-16",
+      "price": 2319.5,
+      "chg_1d": -4.393095033964256,
+      "chg_1m": -16.335422993961867,
+      "chg_3m": -34.64650790609609,
+      "decimals": 2
+    },
+    {
+      "key": "hs300",
+      "name": "沪深300",
+      "date": "2026-11-16",
+      "price": 3977.19,
+      "chg_1d": -0.9735352775820494,
+      "chg_1m": -4.637690889342316,
+      "chg_3m": -14.72193216246872,
+      "decimals": 2
+    },
+    {
+      "key": "hsi",
+      "name": "恒生指数",
+      "date": "2026-11-16",
+      "price": 23761.13,
+      "chg_1d": 0.5225995870985267,
+      "chg_1m": -1.2533495797648841,
+      "chg_3m": -6.647879267189271,
+      "decimals": 2
+    },
+    {
+      "key": "usdcnh",
+      "name": "美元/离岸人民币",
+      "date": "2026-11-16",
+      "price": 6.6703,
+      "chg_1d": -0.06592056571830263,
+      "chg_1m": -0.23481902482799244,
+      "chg_3m": -0.9032698964507979,
+      "decimals": 4
+    },
     {
       "key": "copper",
       "name": "沪铜主力",
@@ -552,7 +612,7 @@
       "ok": true,
       "count": 60,
       "error": "",
-      "latency_ms": 1158,
+      "latency_ms": 1939,
       "cached": false
     },
     {
@@ -562,7 +622,7 @@
       "ok": true,
       "count": 5,
       "error": "",
-      "latency_ms": 2165,
+      "latency_ms": 3003,
       "cached": false
     },
     {
@@ -572,7 +632,7 @@
       "ok": true,
       "count": 60,
       "error": "",
-      "latency_ms": 2224,
+      "latency_ms": 1787,
       "cached": false
     },
     {
@@ -580,9 +640,9 @@
       "name": "国家发改委",
       "region": "domestic",
       "ok": true,
-      "count": 4,
+      "count": 3,
       "error": "",
-      "latency_ms": 1280,
+      "latency_ms": 650,
       "cached": false
     },
     {
@@ -590,9 +650,9 @@
       "name": "国家统计局",
       "region": "domestic",
       "ok": true,
-      "count": 3,
+      "count": 8,
       "error": "",
-      "latency_ms": 3547,
+      "latency_ms": 3088,
       "cached": false
     },
     {
@@ -602,7 +662,7 @@
       "ok": true,
       "count": 50,
       "error": "",
-      "latency_ms": 1736,
+      "latency_ms": 1519,
       "cached": false
     },
     {
@@ -610,9 +670,9 @@
       "name": "财政部",
       "region": "domestic",
       "ok": true,
-      "count": 14,
+      "count": 11,
       "error": "",
-      "latency_ms": 1508,
+      "latency_ms": 1153,
       "cached": false
     },
     {
@@ -622,7 +682,7 @@
       "ok": true,
       "count": 14,
       "error": "",
-      "latency_ms": 59,
+      "latency_ms": 186,
       "cached": false
     },
     {
@@ -630,9 +690,9 @@
       "name": "CNBC Economy",
       "region": "overseas",
       "ok": true,
-      "count": 5,
+      "count": 4,
       "error": "",
-      "latency_ms": 54,
+      "latency_ms": 112,
       "cached": false
     },
     {
@@ -640,9 +700,29 @@
       "name": "FT中文网",
       "region": "overseas",
       "ok": true,
-      "count": 5,
+      "count": 3,
       "error": "",
-      "latency_ms": 225,
+      "latency_ms": 262,
+      "cached": false
+    },
+    {
+      "id": "google_news_china",
+      "name": "Google News · China Economy",
+      "region": "overseas",
+      "ok": true,
+      "count": 63,
+      "error": "",
+      "latency_ms": 380,
+      "cached": false
+    },
+    {
+      "id": "google_news_macro",
+      "name": "Google News · Global Macro",
+      "region": "overseas",
+      "ok": true,
+      "count": 80,
+      "error": "",
+      "latency_ms": 412,
       "cached": false
     },
     {
@@ -652,7 +732,7 @@
       "ok": true,
       "count": 10,
       "error": "",
-      "latency_ms": 52,
+      "latency_ms": 221,
       "cached": false
     },
     {
@@ -662,7 +742,7 @@
       "ok": true,
       "count": 0,
       "error": "未抓到符合时间窗口的新闻",
-      "latency_ms": 159,
+      "latency_ms": 704,
       "cached": false
     },
     {
@@ -670,9 +750,9 @@
       "name": "纽约时报中文网",
       "region": "overseas",
       "ok": true,
-      "count": 9,
+      "count": 7,
       "error": "",
-      "latency_ms": 3292,
+      "latency_ms": 226,
       "cached": false
     },
     {
@@ -680,29 +760,9 @@
       "name": "美联储",
       "region": "overseas",
       "ok": true,
-      "count": 4,
+      "count": 1,
       "error": "",
-      "latency_ms": 36,
-      "cached": false
-    },
-    {
-      "id": "google_news_china",
-      "name": "Google News · China Economy",
-      "region": "overseas",
-      "ok": false,
-      "count": 0,
-      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=China+economy+when:3d&hl=en-US&gl=US&ceid=US:en",
-      "latency_ms": 16669,
-      "cached": false
-    },
-    {
-      "id": "google_news_macro",
-      "name": "Google News · Global Macro",
-      "region": "overseas",
-      "ok": false,
-      "count": 0,
-      "error": "HTTPError: 503 Server Error: Service Unavailable for url: https://news.google.com/rss/search?q=Federal+Reserve+OR+inflation+OR+recession+when:3d&hl=en-US&gl=US&ceid=US:en",
-      "latency_ms": 15934,
+      "latency_ms": 61,
       "cached": false
     },
     {
@@ -712,7 +772,7 @@
       "ok": false,
       "count": 0,
       "error": "HTTPError: 403 Client Error: Forbidden for url: https://www.imf.org/en/Blogs/rss",
-      "latency_ms": 1269,
+      "latency_ms": 1498,
       "cached": false
     },
     {
@@ -722,7 +782,7 @@
       "ok": false,
       "count": 0,
       "error": "HTTPError: 403 Client Error: Forbidden for url: https://cn.nikkei.com/rss.html",
-      "latency_ms": 1223,
+      "latency_ms": 1367,
       "cached": false
     },
     {
@@ -732,12 +792,12 @@
       "ok": false,
       "count": 0,
       "error": "HTTPError: 404 Client Error: Not Found for url: https://www.zaobao.com.sg/rss/realtime/china",
-      "latency_ms": 1533,
+      "latency_ms": 1692,
       "cached": false
     }
   ],
   "files": {
-    "html": "2026-11-15.html",
-    "markdown": "2026-11-15.md"
+    "html": "2026-11-16.html",
+    "markdown": "2026-11-16.md"
   }
 }
