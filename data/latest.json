@@ -1,13 +1,13 @@
 {
-  "run_id": "20261125-165527",
-  "generated_at": "2026-11-25T16:55:27.403248+08:00",
-  "report_date": "2026-11-25",
-  "composite": 32.9,
+  "run_id": "20261126-164046",
+  "generated_at": "2026-11-26T16:40:46.169875+08:00",
+  "report_date": "2026-11-26",
+  "composite": 31.7,
   "temperature": "偏冷",
   "regime": "偏冷 / 通缩压力",
-  "delta_3m": -3.6,
-  "coverage": 0.64,
-  "improving_share": 0.38,
+  "delta_3m": -5.0,
+  "coverage": 0.61,
+  "improving_share": 0.33,
   "pillars": {
     "growth": {
       "score": 41.723188004045944,
@@ -34,39 +34,39 @@
       "coverage": 1.0
     },
     "external": {
-      "score": 30.774494174145804,
-      "delta_3m": -14.08873895316251,
+      "score": 23.727272727272727,
+      "delta_3m": -24.52477661900605,
       "weight": 0.18,
-      "coverage": 0.48
+      "coverage": 0.32999999999999996
     }
   },
   "news": {
-    "score": 36.0,
-    "policy_score": 50.0,
-    "policy_label": "中性",
+    "score": 40.2,
+    "policy_score": 20.3,
+    "policy_label": "偏收紧",
     "counts": {
-      "total": 106,
-      "positive": 9,
-      "negative": 25,
-      "neutral": 72,
-      "domestic": 21,
-      "overseas": 85,
-      "official": 16
+      "total": 112,
+      "positive": 16,
+      "negative": 32,
+      "neutral": 64,
+      "domestic": 26,
+      "overseas": 86,
+      "official": 18
     }
   },
   "narrative": {
     "verdict": "数据与情绪共振向下，短期以防御为主；外部环境偏紧，地产链仍是拖累",
-    "summary": "经济温度 32.9，处于「偏冷」区间，较 3 个月前明显走弱（-3.6 分）。结构上，偏冷 / 通缩压力格局：PPI 同比（5.7%）、一线二手房环比（均值）（0.2%）是主要支撑，新增人民币贷款同比（-3,696.1%）、沪铜 3 个月涨跌（-19.4%）、美国 CPI 同比（3.7%）是主要拖累。最新 CPI 0.7%、制造业 PMI 49.3，社零 0.4%、固投 —、出口 —。新闻面偏悲观（36 分），政策信号中性。",
+    "summary": "经济温度 31.7，处于「偏冷」区间，较 3 个月前明显走弱（-5.0 分）。结构上，偏冷 / 通缩压力格局：PPI 同比（5.7%）、一线二手房环比（均值）（0.2%）是主要支撑，新增人民币贷款同比（-3,696.1%）、沪铜 3 个月涨跌（-18.1%）、美国 CPI 同比（3.7%）是主要拖累。最新 CPI 0.7%、制造业 PMI 49.3，社零 0.4%、固投 —、出口 —。新闻面偏悲观（40 分），政策信号偏收紧。",
     "drivers": [
       "PPI 同比：5.7%，评分 69",
       "一线二手房环比（均值）：0.2%，评分 58"
     ],
     "risks": [
       "新增人民币贷款同比：-3,696.1%，评分 5",
-      "沪铜 3 个月涨跌：-19.4%，评分 15",
+      "沪铜 3 个月涨跌：-18.1%，评分 15",
       "美国 CPI 同比：3.7%，评分 31",
       "新闻情绪偏弱，注意预期自我强化",
-      "数据覆盖率仅 64%，结论置信度受影响"
+      "数据覆盖率仅 61%，结论置信度受影响"
     ],
     "watch": [
       "11月 CPI / PPI",
@@ -89,7 +89,7 @@
       "score": 44.4,
       "score_delta_3m": 0.8,
       "period": "2026-10-31",
-      "age_days": 25,
+      "age_days": 26,
       "status": "ok",
       "weight": 0.18,
       "source": "国家统计局",
@@ -125,7 +125,7 @@
       "score": 39.6,
       "score_delta_3m": -0.7,
       "period": "2026-10-31",
-      "age_days": 25,
+      "age_days": 26,
       "status": "ok",
       "weight": 0.16,
       "source": "国家统计局",
@@ -179,7 +179,7 @@
       "score": 35.6,
       "score_delta_3m": -3.6,
       "period": "2026-09-30",
-      "age_days": 56,
+      "age_days": 57,
       "status": "ok",
       "weight": 0.1,
       "source": "国家统计局",
@@ -197,7 +197,7 @@
       "score": 47.6,
       "score_delta_3m": 5.6,
       "period": "2026-10-31",
-      "age_days": 25,
+      "age_days": 26,
       "status": "ok",
       "weight": 0.08,
       "source": "国家统计局",
@@ -233,7 +233,7 @@
       "score": 33.6,
       "score_delta_3m": 5.6,
       "period": "2026-10-31",
-      "age_days": 25,
+      "age_days": 26,
       "status": "ok",
       "weight": 0.55,
       "source": "国家统计局",
@@ -251,7 +251,7 @@
       "score": 69.2,
       "score_delta_3m": -2.1,
       "period": "2026-10-31",
-      "age_days": 25,
+      "age_days": 26,
       "status": "ok",
       "weight": 0.45,
       "source": "国家统计局",
@@ -323,7 +323,7 @@
       "score": 5.0,
       "score_delta_3m": -6.4,
       "period": "2026-10-31",
-      "age_days": 25,
+      "age_days": 26,
       "status": "ok",
       "weight": 0.2,
       "source": "中国人民银行",
@@ -359,7 +359,7 @@
       "score": 30.0,
       "score_delta_3m": -6.4,
       "period": "2026-10-31",
-      "age_days": 25,
+      "age_days": 26,
       "status": "ok",
       "weight": 0.4,
       "source": "国家统计局 / 东方财富",
@@ -377,7 +377,7 @@
       "score": 27.0,
       "score_delta_3m": 4.7,
       "period": "2026-10-31",
-      "age_days": 25,
+      "age_days": 26,
       "status": "ok",
       "weight": 0.3,
       "source": "国家统计局 / 东方财富",
@@ -395,7 +395,7 @@
       "score": 58.0,
       "score_delta_3m": -1.0,
       "period": "2026-10-31",
-      "age_days": 25,
+      "age_days": 26,
       "status": "ok",
       "weight": 0.3,
       "source": "国家统计局 / 东方财富",
@@ -449,7 +449,7 @@
       "score": 31.0,
       "score_delta_3m": -4.0,
       "period": "2026-09-30",
-      "age_days": 56,
+      "age_days": 57,
       "status": "ok",
       "weight": 0.18,
       "source": "美国劳工部",
@@ -462,11 +462,11 @@
       "pillar": "external",
       "unit": "%",
       "decimals": 1,
-      "value": -19.385884509624198,
+      "value": -18.148487626031162,
       "prior": 2.4559074530627667,
       "score": 15.0,
       "score_delta_3m": -49.2,
-      "period": "2026-11-25",
+      "period": "2026-11-26",
       "age_days": 0,
       "status": "ok",
       "weight": 0.15,
@@ -480,17 +480,17 @@
       "pillar": "external",
       "unit": "%",
       "decimals": 1,
-      "value": -9.65202330341679,
-      "prior": 35.94579747299029,
-      "score": 46.3,
-      "score_delta_3m": 8.9,
-      "period": "2026-11-25",
-      "age_days": 0,
-      "status": "ok",
+      "value": null,
+      "prior": null,
+      "score": null,
+      "score_delta_3m": null,
+      "period": "",
+      "age_days": null,
+      "status": "missing",
       "weight": 0.15,
       "source": "上海国际能源交易中心",
       "note": "油价大幅波动对中国这个进口国偏负面；温和上行反映需求。",
-      "signal": "中性"
+      "signal": "—"
     },
     {
       "key": "us10y_chg_3m",
@@ -515,22 +515,12 @@
     {
       "key": "copper",
       "name": "沪铜主力",
-      "date": "2026-11-25",
-      "price": 87950.0,
-      "chg_1d": -4.8263174981062695,
-      "chg_1m": -18.85782821293477,
-      "chg_3m": -17.957089552238802,
+      "date": "2026-11-26",
+      "price": 89300.0,
+      "chg_1d": 1.5349630471859,
+      "chg_1m": -18.223443223443226,
+      "chg_3m": -16.945684523809522,
       "decimals": 0
-    },
-    {
-      "key": "brent",
-      "name": "原油(SC)主力",
-      "date": "2026-11-25",
-      "price": 573.8,
-      "chg_1d": 0.47277184381018245,
-      "chg_1m": -21.793648630230354,
-      "chg_3m": -1.6455262255742231,
-      "decimals": 1
     },
     {
       "key": "gold",
@@ -551,7 +541,7 @@
       "ok": true,
       "count": 60,
       "error": "",
-      "latency_ms": 1567,
+      "latency_ms": 1244,
       "cached": false
     },
     {
@@ -561,7 +551,7 @@
       "ok": true,
       "count": 5,
       "error": "",
-      "latency_ms": 5724,
+      "latency_ms": 1927,
       "cached": false
     },
     {
@@ -569,9 +559,9 @@
       "name": "国家发改委",
       "region": "domestic",
       "ok": true,
-      "count": 2,
+      "count": 4,
       "error": "",
-      "latency_ms": 885,
+      "latency_ms": 826,
       "cached": false
     },
     {
@@ -581,7 +571,7 @@
       "ok": true,
       "count": 1,
       "error": "",
-      "latency_ms": 6013,
+      "latency_ms": 3946,
       "cached": false
     },
     {
@@ -589,9 +579,9 @@
       "name": "新浪财经",
       "region": "domestic",
       "ok": true,
-      "count": 50,
+      "count": 49,
       "error": "",
-      "latency_ms": 4800,
+      "latency_ms": 2290,
       "cached": false
     },
     {
@@ -601,7 +591,7 @@
       "ok": true,
       "count": 10,
       "error": "",
-      "latency_ms": 960,
+      "latency_ms": 1412,
       "cached": false
     },
     {
@@ -611,7 +601,7 @@
       "ok": false,
       "count": 0,
       "error": "ConnectionError: HTTPSConnectionPool(host='api-one.wallstcn.com', port=443): Max retries exceeded with url: /apiv1/content/lives?channel=global-channel&client=pc&limit=60 (Caused by NameResolutionError(\"HTTPSConnection(host='api-one.wallstcn.com', port=443): Failed to resolve 'api-one.wallstcn.com' ([Errno -2] Name or service not known)\"))",
-      "latency_ms": 1321,
+      "latency_ms": 1367,
       "cached": false
     },
     {
@@ -619,9 +609,9 @@
       "name": "BBC中文",
       "region": "overseas",
       "ok": true,
-      "count": 19,
+      "count": 18,
       "error": "",
-      "latency_ms": 144,
+      "latency_ms": 474,
       "cached": false
     },
     {
@@ -629,9 +619,9 @@
       "name": "CNBC Economy",
       "region": "overseas",
       "ok": true,
-      "count": 4,
+      "count": 8,
       "error": "",
-      "latency_ms": 126,
+      "latency_ms": 139,
       "cached": false
     },
     {
@@ -641,7 +631,7 @@
       "ok": true,
       "count": 0,
       "error": "未抓到符合时间窗口的新闻",
-      "latency_ms": 227,
+      "latency_ms": 232,
       "cached": false
     },
     {
@@ -649,9 +639,9 @@
       "name": "Google News · China Economy",
       "region": "overseas",
       "ok": true,
-      "count": 74,
+      "count": 60,
       "error": "",
-      "latency_ms": 580,
+      "latency_ms": 587,
       "cached": false
     },
     {
@@ -661,7 +651,7 @@
       "ok": true,
       "count": 80,
       "error": "",
-      "latency_ms": 598,
+      "latency_ms": 551,
       "cached": false
     },
     {
@@ -671,7 +661,7 @@
       "ok": true,
       "count": 10,
       "error": "",
-      "latency_ms": 210,
+      "latency_ms": 231,
       "cached": false
     },
     {
@@ -681,7 +671,7 @@
       "ok": true,
       "count": 0,
       "error": "未抓到符合时间窗口的新闻",
-      "latency_ms": 679,
+      "latency_ms": 904,
       "cached": false
     },
     {
@@ -689,9 +679,9 @@
       "name": "纽约时报中文网",
       "region": "overseas",
       "ok": true,
-      "count": 18,
+      "count": 20,
       "error": "",
-      "latency_ms": 85,
+      "latency_ms": 134,
       "cached": false
     },
     {
@@ -699,9 +689,9 @@
       "name": "美联储",
       "region": "overseas",
       "ok": true,
-      "count": 1,
+      "count": 3,
       "error": "",
-      "latency_ms": 87,
+      "latency_ms": 116,
       "cached": false
     },
     {
@@ -711,7 +701,7 @@
       "ok": false,
       "count": 0,
       "error": "HTTPError: 403 Client Error: Forbidden for url: https://www.imf.org/en/Blogs/rss",
-      "latency_ms": 1371,
+      "latency_ms": 1454,
       "cached": false
     },
     {
@@ -721,7 +711,7 @@
       "ok": false,
       "count": 0,
       "error": "HTTPError: 403 Client Error: Forbidden for url: https://cn.nikkei.com/rss.html",
-      "latency_ms": 1320,
+      "latency_ms": 1328,
       "cached": false
     },
     {
@@ -731,12 +721,12 @@
       "ok": false,
       "count": 0,
       "error": "HTTPError: 404 Client Error: Not Found for url: https://www.zaobao.com.sg/rss/realtime/china",
-      "latency_ms": 1652,
+      "latency_ms": 1604,
       "cached": false
     }
   ],
   "files": {
-    "html": "2026-11-25.html",
-    "markdown": "2026-11-25.md"
+    "html": "2026-11-26.html",
+    "markdown": "2026-11-26.md"
   }
 }
